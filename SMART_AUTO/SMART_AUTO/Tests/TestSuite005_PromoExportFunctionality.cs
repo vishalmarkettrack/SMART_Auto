@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite005_PromoExportFunctionality : Base
     {
         #region Private Variables
@@ -66,6 +66,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.verifyButtonDisableOrNotOnScreen("Export All", false);
 
             }
@@ -91,6 +92,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.selectRecordFromViewSection();
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
@@ -120,6 +122,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.selectRecordFromViewSection();
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
@@ -148,7 +151,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
-
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.selectRecordFromViewSection();
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
@@ -190,10 +193,11 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.selectRecordFromViewSection();
-                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");                
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
                 promoDashboard.verifyTiooltipFunctionalityForReportsSection("Power Point Reports", "Download");
 
             }
@@ -219,6 +223,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.selectRecordFromViewSection();
@@ -249,6 +254,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.selectRecordFromViewSection();
@@ -278,6 +284,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
@@ -306,8 +313,9 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
-                
+
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
                 promoDashboard.verifyTiooltipFunctionalityForReportsSection("Power Point Reports", "Email", "Send results via email");
 
@@ -334,6 +342,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Asset Downloads");
@@ -362,6 +371,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
@@ -390,6 +400,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
@@ -418,6 +429,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Asset Downloads");
@@ -446,6 +458,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
 
                 promoDashboard.verifyButtonDisableOrNotOnScreen("View Selected", true);
@@ -475,6 +488,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.selectRecordFromViewSection().verifyButtonDisableOrNotOnScreen("Export Selected", false);
 
@@ -502,6 +516,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.selectRecordFromViewSection();
                 promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
@@ -532,6 +547,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.selectRecordFromViewSection();
                 promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
@@ -562,6 +578,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.selectRecordFromViewSection();
                 promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
                 promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Asset Downloads");

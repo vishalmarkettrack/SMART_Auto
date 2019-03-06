@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite006_Schedulers : Base
     {
         #region Private Variables
@@ -65,6 +65,8 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
+
                 homePage.clickMenuIconFromScreen("Search");
                 searchPage.clickButtonOnSearchScreen("Reset").verifyResetChangesMessageOnScreen(true);
                 searchPage.clickButtonOnSearchScreen("Apply Search");
@@ -91,6 +93,8 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
+
                 homePage.clickMenuIconFromScreen("Search");
                 schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
                 schedule.verifyTooltipMessageOrClickButtonOnScreen("Schedule", "Schedule");
@@ -116,6 +120,8 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
+
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
                 schedule.verifyTooltipMessageOrClickButtonOnScreen("Schedule", "Schedule", true);
@@ -146,6 +152,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -180,6 +187,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -215,6 +223,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -251,6 +260,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -287,6 +297,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -323,6 +334,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -358,6 +370,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 searchPage.selectDateRangeOptionFromSection("Last Year");
                 schedule.clickButtonOnScreen("Apply Search");
@@ -385,6 +398,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 searchPage.selectDateRangeOptionFromSection("Last Year");
                 schedule.clickButtonOnScreen("Apply Search");
@@ -412,6 +426,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 searchPage.selectDateRangeOptionFromSection("Last Year");
                 schedule.clickButtonOnScreen("Apply Search");
@@ -437,7 +452,9 @@ namespace SMART_AUTO.SMART_AUTO
             {
                 loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
                 loginPage.loginUsingValidEmailIdAndPassword();
+
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 
                 homePage.clickMenuIconFromScreen("Search");
                 schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen(false);
@@ -462,7 +479,9 @@ namespace SMART_AUTO.SMART_AUTO
             {
                 loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
                 loginPage.loginUsingValidEmailIdAndPassword();
+
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
 
                 homePage.clickMenuIconFromScreen("Search");
                 schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen(false);
@@ -487,7 +506,9 @@ namespace SMART_AUTO.SMART_AUTO
             {
                 loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
                 loginPage.loginUsingValidEmailIdAndPassword();
+
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
 
                 homePage.clickMenuIconFromScreen("Search");
                 schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen(false);
@@ -519,6 +540,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 
@@ -550,6 +572,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand Canada");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Media");
                 homePage.clickMenuIconFromScreen("Search");
                 string searchTitle = schedule.createNewSearchOrClickSavedSearchToApplySearchOnScreen();
 

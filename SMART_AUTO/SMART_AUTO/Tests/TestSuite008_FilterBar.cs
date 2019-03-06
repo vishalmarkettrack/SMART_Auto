@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite008_FilterBar : Base
     {
         #region Private Variables
@@ -244,7 +244,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 promoDashboard.verifyFilterBarSectionOnScreen(false);
                 promoDashboard.verifyAndClickResetAllButtonOnFilterSection(false);
-                promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last Month");
+                promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last 6 Months");
                 promoDashboard.verifyAndClickResetAllButtonOnFilterSection(true);
 
             }

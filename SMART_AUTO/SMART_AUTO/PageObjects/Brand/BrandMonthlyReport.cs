@@ -912,7 +912,10 @@ namespace SMART_AUTO
 
             Assert.IsTrue(driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//div[@class='detail-view-content']"), "Detail View section not Present on Ad Image Section.");
             Assert.IsTrue(driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//button[contains(text(),'View Ad')]"), "View Ad Icon not Present on Ad Image.");
-            Assert.IsTrue(driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//button[contains(text(),'Markets')]"), "Markets Icon not Present on Ad Image.");
+            if (driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//button[contains(text(),'Markets')]"))
+                Assert.IsTrue(driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//button[contains(text(),'Markets')]"), "Markets Icon not Present on Ad Image.");
+            else
+                Assert.IsTrue(driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//button[contains(text(),'Occurrences')]"), "Occurrences Icon not Present on Ad Image.");
             Assert.IsTrue(driver._isElementPresent("xpath", "//div[@class='aditem aditem-long']//.//button[contains(text(),'Details')]"), "Details Icon not Present on Ad Image.");
 
             Results.WriteStatus(test, "Pass", "Verified, Thumbnail Section on Screen.");

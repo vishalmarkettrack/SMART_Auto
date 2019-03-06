@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite011_Brand_MonthlyReport : Base
     {
         #region Private Variables
@@ -123,7 +123,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -152,7 +152,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -183,7 +183,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -214,7 +214,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -244,7 +244,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -273,7 +273,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 brandMonthlyReport.verifyFilterBarSectionOnScreen(true);
@@ -299,7 +299,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 brandMonthlyReport.verifyFilterBarSectionOnScreen(true);
@@ -328,7 +328,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("All Media Types");
@@ -357,7 +357,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen();
                 promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("All Advertiser Products");
@@ -388,7 +388,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
 
@@ -413,7 +413,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 promoDashboard.verifyFilterBarSectionOnScreen(false);
                 promoDashboard.verifyAndClickResetAllButtonOnFilterSection(false);
@@ -441,7 +441,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyAdvertiserRankingsPeriodOverPeriodSectionOnScreen();
@@ -467,7 +467,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyAdvertiserRankingsPeriodOverPeriodSectionOnScreen();
@@ -495,7 +495,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyAdvertiserRankingsPeriodOverPeriodSectionOnScreen();
@@ -525,7 +525,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyAdvertiserRankingsPeriodOverPeriodSectionOnScreen();
@@ -553,7 +553,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyAdvertiserRankingsPeriodOverPeriodSectionOnScreen();
@@ -583,7 +583,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyAdvertiserRankingsPeriodOverPeriodSectionOnScreen();
@@ -611,7 +611,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 homePage.clickMenuIconFromScreen("Search");
@@ -642,7 +642,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.clickIconButtonOnScreenForChart("Advertiser Rankings Period over Period", "Download");
@@ -670,7 +670,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyLegendToClickAndVerifyForChart("Advertiser Rankings Period over Period");
@@ -696,7 +696,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel();
@@ -722,7 +722,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel();
@@ -753,7 +753,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel();
@@ -783,7 +783,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -813,7 +813,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyNavigationArrowForCarousel("Next", true);
@@ -839,7 +839,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -866,7 +866,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -894,7 +894,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -922,7 +922,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -950,7 +950,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -979,7 +979,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.clickViewButtonIconToVerifyOptionsAndClick("Table");
@@ -1027,7 +1027,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.clickViewButtonIconToVerifyOptionsAndClick("Details");
@@ -1080,7 +1080,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.clickViewButtonIconToVerifyOptionsAndClick("Thumbnail");
@@ -1129,7 +1129,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyButtonDisableOrNotOnScreen("View Selected", true);
@@ -1158,7 +1158,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true).selectRecordFromGridPanelOnScreen();
                 brandMonthlyReport.verifyButtonDisableOrNotOnScreen("Reset Selected", false);
@@ -1186,7 +1186,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 brandMonthlyReport.verifyButtonDisableOrNotOnScreen("Reset Selected", true);
@@ -1212,7 +1212,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true).selectRecordFromGridPanelOnScreen();
                 brandMonthlyReport.verifyButtonDisableOrNotOnScreen("Reset Selected", false);
@@ -1239,7 +1239,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true).selectRecordFromGridPanelOnScreen();
                 brandMonthlyReport.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
@@ -1267,7 +1267,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true).selectRecordFromGridPanelOnScreen();
                 brandMonthlyReport.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
@@ -1296,7 +1296,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true).selectRecordFromGridPanelOnScreen();
                 brandMonthlyReport.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
@@ -1325,7 +1325,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true).selectRecordFromGridPanelOnScreen();
                 brandMonthlyReport.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
@@ -1354,7 +1354,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 homePage.clickOnDayFilterFieldAndClickOption("Last Year");
@@ -1383,7 +1383,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 homePage.clickOnDayFilterFieldAndClickOption("Last Year");
@@ -1413,7 +1413,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
                 //homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing - Brand - Monthly Report");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Monthly Report");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Monthly Report");
 
                 brandMonthlyReport.verifyBrandMonthlyReportScreen(true);
                 homePage.clickOnDayFilterFieldAndClickOption("Last Year");

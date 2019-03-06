@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite012_BM_AnnualSummaryByCategory : Base
     {
         #region Private Variables

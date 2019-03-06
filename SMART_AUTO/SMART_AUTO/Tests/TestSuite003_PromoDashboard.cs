@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite003_PromoDashboard : Base
     {
         #region Private Variables
@@ -266,7 +266,7 @@ namespace SMART_AUTO.SMART_AUTO
 
                 promoDashboard.verifyFilterBarSectionOnScreen(false);
                 promoDashboard.verifyAndClickResetAllButtonOnFilterSection(false);
-                promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last Month");
+                promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last 6 Months");
                 promoDashboard.verifyAndClickResetAllButtonOnFilterSection(true);
 
             }
@@ -1032,7 +1032,8 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Promo");
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
-                promoDashboard.verifyPromoDashboardScreen().verifyActionButtonOnViewSection();
+                promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table").verifyActionButtonOnViewSection();
                 promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Thumbnail");
                 promoDashboard.verifyThumbnailViewSectionOnScreen();
                 promoDashboard.verifyPaginationPanelForViewSection("Thumbnail View");
@@ -1080,7 +1081,8 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Promo");
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
-                promoDashboard.verifyPromoDashboardScreen().verifyButtonDisableOrNotOnScreen("View Selected", true);
+                promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table").verifyButtonDisableOrNotOnScreen("View Selected", true);
                 promoDashboard.selectRecordFromViewSection().clickButtonOnViewActionSection("View Selected");
                 promoDashboard.verifyButtonDisableOrNotOnScreen("View Selected", false);
                 promoDashboard.verifyViewSelectedButtonCheckedOrNotOnScreen(true);
@@ -1107,7 +1109,8 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Promo");
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
-                promoDashboard.verifyPromoDashboardScreen().verifyButtonDisableOrNotOnScreen("View Selected", true);
+                promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table").verifyButtonDisableOrNotOnScreen("View Selected", true);
                 promoDashboard.selectRecordFromViewSection().clickButtonOnViewActionSection("View Selected");
                 promoDashboard.verifyButtonDisableOrNotOnScreen("View Selected", false);
                 promoDashboard.verifyViewSelectedButtonCheckedOrNotOnScreen(true);
@@ -1137,7 +1140,8 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Promo");
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
-                promoDashboard.verifyPromoDashboardScreen().selectRecordFromViewSection();
+                promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table").selectRecordFromViewSection();
                 promoDashboard.verifyButtonDisableOrNotOnScreen("Reset Selected", false);
                 promoDashboard.clickButtonOnViewActionSection("Reset Selected");
                 promoDashboard.verifyViewSelectedButtonCheckedOrNotOnScreen(false);
@@ -1165,6 +1169,7 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 promoDashboard.verifyButtonDisableOrNotOnScreen("Reset Selected", true);
 
             }
@@ -1190,9 +1195,10 @@ namespace SMART_AUTO.SMART_AUTO
                 homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 promoDashboard.verifyPromoDashboardScreen();
+                promoDashboard.clickDetailViewButtonAndVerifyOptionsToClick("Table");
                 homePage.verifyBottomPanelOfScreen().clickMarketTrackLogoFromBottom();
                 driver.SwitchTo().Window(driver.WindowHandles.Last());
-                loginPage.verifyNavigateURLOnScreen("https://numerator.com/");
+                loginPage.verifyNavigateURLOnScreen("https://www.numerator.com/");
 
             }
             catch (Exception e)

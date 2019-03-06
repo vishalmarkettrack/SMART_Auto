@@ -53,7 +53,7 @@ namespace SMART_AUTO
             verifyFilterBarSectionOnScreen(false);
 
             if (driver._isElementPresent("xpath", "//span[@class='lead' and contains(text(),'No items were found')]"))
-                clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last Month");
+                clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last 6 Months");
 
             Assert.AreEqual(true, driver._isElementPresent("id", "domain-carousel"), "Carousel Section not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@class='carousel-filters']/label/span[text() = 'Circular Week']"), "'Circular Week' Radio option not Present.");
@@ -117,7 +117,7 @@ namespace SMART_AUTO
             Results.WriteStatus(test, "Pass", "Verified, Filter Bar Section Category Summary on Screen.");
 
             if (driver._isElementPresent("xpath", "//span[@class='lead' and contains(text(),'No items were found')]"))
-                clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last Month");
+                clickOnFilterFieldAndVerifyOrClickOptions("Days", "Last 6 Months");
 
             return new PromoDashboard(driver, test);
         }
@@ -178,7 +178,7 @@ namespace SMART_AUTO
                 if (optionName != "")
                     for (int j = 0; j < optionsCollections.Count; j++)
                     {
-                        if (optionName == optionsCollections[j].Text)
+                        if (optionsCollections[j].Text.Contains(optionName))
                         {
                             optionsCollections[j].Click();
                             Thread.Sleep(500);
@@ -685,6 +685,7 @@ namespace SMART_AUTO
                 if (thumbnail)
                     for (int i = 0; i < productCounts.Count; i++)
                     {
+                        Assert.AreEqual(true, driver._waitForElement("xpath", "//*[@id='domain-carousel']/div/div[contains(@class,'active')]/div[" + (i + 1) + "]//.//img"), "image not load properly.");
                         IWebElement image = driver._findElement("xpath", "//*[@id='domain-carousel']/div/div[contains(@class,'active')]/div[" + (i + 1) + "]//.//img");
                         bool loaded = Convert.ToBoolean(((IJavaScriptExecutor)driver).ExecuteScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", image));
                         Assert.AreEqual(true, loaded, "'(" + image.GetAttribute("src") + ")' Image Not Load on Carousel Section.");

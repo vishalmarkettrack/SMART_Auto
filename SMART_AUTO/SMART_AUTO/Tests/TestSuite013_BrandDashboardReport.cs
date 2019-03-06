@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SMART_AUTO.SMART_AUTO
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.None)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class TestSuite013_BrandDashboardReport : Base
     {
         #region Private Variables
@@ -89,7 +89,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -120,7 +120,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -148,7 +148,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -178,7 +178,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -208,7 +208,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -237,7 +237,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -265,7 +265,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyFilterBarSectionOnScreen(true);
@@ -290,7 +290,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyFilterBarSectionOnScreen(true);
@@ -318,7 +318,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("Media Types");
@@ -346,7 +346,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.clickOnFilterFieldAndVerifyOrClickOptions("Advertiser Products");
@@ -376,7 +376,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
 
@@ -400,7 +400,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.verifyFilterBarSectionOnScreen(false);
@@ -428,7 +428,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -454,7 +454,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -485,7 +485,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -515,7 +515,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -545,7 +545,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyNavigationArrowForCarousel("Next", true);
@@ -570,7 +570,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandMonthlyReport.verifyProductThumbnailInProductCarousel(true);
@@ -596,7 +596,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandDashboard.verifyCountOfCreativesRunningByAdvertiserAndMediaTypeChart();
@@ -621,7 +621,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandDashboard.verifyCountOfCreativesRunningByAdvertiserAndMediaTypeChart();
@@ -648,7 +648,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandDashboard.verifyCountOfCreativesRunningByAdvertiserAndMediaTypeChart();
@@ -677,7 +677,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandDashboard.verifyCountOfCreativesRunningByAdvertiserAndMediaTypeChart();
@@ -705,7 +705,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 homePage.clickMenuIconFromScreen("Search");
@@ -735,7 +735,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandDashboard.verifyCountOfCreativesRunningByAdvertiserAndMediaTypeChart();
@@ -761,7 +761,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 brandDashboard.hoverMouseOnBarChartAndGetTheTooltipRecords("Count of Creatives Running by Advertiser and Media Type");
@@ -786,7 +786,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 string divID= brandDashboard.verifyChartDetailsOnScreem("Count of Creatives Running by Competitor");
@@ -812,7 +812,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -839,7 +839,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -866,7 +866,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -893,7 +893,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword(1);
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.clickButtonOnViewActionSection("Field Options");
@@ -1067,7 +1067,7 @@ namespace SMART_AUTO.SMART_AUTO
                 loginPage.loginUsingValidEmailIdAndPassword();
 
                 homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
-                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("QA Testing Dashboard");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
 
                 brandDashboard.verifyBrandDashboardScreen();
                 promoDashboard.verifyButtonDisableOrNotOnScreen("View Selected", true);

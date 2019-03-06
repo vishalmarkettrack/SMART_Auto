@@ -111,7 +111,7 @@ namespace SMART_AUTO
             if (dateRange.Equals("Random"))
             {
                 Random rand = new Random();
-                int x = rand.Next(0, dateRangeCollections.Count);
+                int x = rand.Next(3, dateRangeCollections.Count);
                 dateRange = dateRangeCollections[x].Text;
                 driver._clickByJavaScriptExecutor("//cft-field-editor-timeframe-calendar//.//div[@class='CFT-search-list-group-field CFT-search-list-group-field-child']/div/div/div[1]//.//ul/li[" + (x + 1) + "]/span");
                 Results.WriteStatus(test, "Pass", "Selected, '" + dateRange + "' Date Range from Section.");
