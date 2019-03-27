@@ -194,7 +194,7 @@ namespace SMART_AUTO
             {
                 clickButtonOnScreen("Save As");
 
-                Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']"), "'What would you like to call your search?' textarea not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", 20), "'What would you like to call your search?' textarea not Present.");
                 driver._clickByJavaScriptExecutor("//input[contains(@placeholder,'What would you like to call your search') and @type='text']");
                 scheduleSearchName = "Test" + driver._randomString(4, true);
                 driver._type("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", scheduleSearchName);
@@ -264,7 +264,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Schedule verifyScheduleWindow(string searchName)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Window not Present on Screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Window not Present on Screen.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[@class='form-control' and @placeholder='" + searchName + "']"), "'" + searchName + "' Search Name Default not display.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//span[@class='fa fa-check text-success form-control-feedback']"), "'" + searchName + "' Search Name Feedback in Green Right color not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='btn btn-default dropdown-toggle']"), "Schedule Dropdown not Present.");
@@ -380,25 +380,25 @@ namespace SMART_AUTO
         {
             if (buttonName.Equals("Create Scheduled Export"))
             {
-                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-default' and contains(text(),'Create Scheduled Export')]"), "'Create Scheduled Export' Button not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-default' and contains(text(),'Create Scheduled Export')]", 20), "'Create Scheduled Export' Button not Present.");
                 driver._clickByJavaScriptExecutor("//button[@class='btn btn-default' and contains(text(),'Create Scheduled Export')]");
             }
 
             if (buttonName.Equals("Save As"))
             {
-                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-default' and contains(text(),'Save As')]"), "'Save As...' Button not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-default' and contains(text(),'Save As')]", 20), "'Save As...' Button not Present.");
                 driver._clickByJavaScriptExecutor("//button[@class='btn btn-default' and contains(text(),'Save As')]");
             }
 
             if (buttonName.Equals("Save!"))
             {
-                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-success' and contains(text(),'Save!')]"), "'Save!' Button not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-success' and contains(text(),'Save!')]", 20), "'Save!' Button not Present.");
                 driver._clickByJavaScriptExecutor("//button[@class='btn btn-success' and contains(text(),'Save!')]");
             }
 
             if (buttonName.Equals("Apply Search"))
             {
-                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-primary' and contains(text(),'Apply Search')]"), "'Apply Search' Button not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//button[@class='btn btn-primary' and contains(text(),'Apply Search')]", 20), "'Apply Search' Button not Present.");
                 driver._clickByJavaScriptExecutor("//button[@class='btn btn-primary' and contains(text(),'Apply Search')]");
             }
 

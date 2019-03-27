@@ -175,7 +175,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen verifyPivotFieldsHeaderOnPivotGrid(string[] headers, bool random)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
 
             if (random == true)
@@ -211,7 +211,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen verifyColumnPresentOrNotOnPivotGrid(string columnName, bool present)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
             bool avail = false;
 
@@ -307,7 +307,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen checkedOUnCheckedOptionFromOtherOptionsSection(string optionName, bool unChecked)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[contains(@class,'list-group-other-options')]/div[contains(@class,'list-group-item')]"), "Other Options not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[contains(@class,'list-group-other-options')]/div[contains(@class,'list-group-item')]", 20), "Other Options not present.");
             IList<IWebElement> otherOptions = driver.FindElements(By.XPath("//div[contains(@class,'list-group-other-options')]/div[contains(@class,'list-group-item')]"));
 
             for (int i = 0; i < otherOptions.Count; i++)
@@ -342,7 +342,7 @@ namespace SMART_AUTO
                     break;
                 }
             }
-            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']");
+            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']", 20);
             driver._waitForElementToBeHidden("xpath", "//span[@class='ag-overlay-loading-center']");
             return new PivotReportScreen(driver, test);
         }
@@ -458,7 +458,7 @@ namespace SMART_AUTO
                     }
                 }
             }
-            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']");
+            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']", 20);
             driver._waitForElementToBeHidden("xpath", "//span[@class='ag-overlay-loading-center']");
             return new PivotReportScreen(driver, test);
         }
@@ -484,7 +484,7 @@ namespace SMART_AUTO
                 }
             }
 
-            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']");
+            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']", 20);
             driver._waitForElementToBeHidden("xpath", "//span[@class='ag-overlay-loading-center']");
             Results.WriteStatus(test, "Pass", "Selected, '" + optionName + "' Radio option from section.");
             return new PivotReportScreen(driver, test);
@@ -734,7 +734,7 @@ namespace SMART_AUTO
                     break;
                 }
             }
-            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']");
+            driver._waitForElement("xpath", "//span[@class='ag-overlay-loading-center']", 20);
             driver._waitForElementToBeHidden("xpath", "//span[@class='ag-overlay-loading-center']");
             Assert.AreEqual(true, avail, "Metrics Options not present on List.");
             return new PivotReportScreen(driver, test);
@@ -820,7 +820,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen clickColumnHeaderToSortDataFromPivotGrid(string columnName, bool descendingOrder)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
             string ColId = "";
 
@@ -884,7 +884,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen clickFilterIconAndVerifySection(string headerName)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
 
             for (int i = 0; i < pivotFieldHeaders.Count; i++)
@@ -1017,7 +1017,7 @@ namespace SMART_AUTO
                 }
             }
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='ag-filter']"), "Filter Section not Open.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='ag-filter']", 20), "Filter Section not Open.");
             Assert.AreEqual(true, driver._isElementPresent("id", "filterType"), "Filter Dropdown List not Present.");
             if (defaultOption)
             {
@@ -1308,7 +1308,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen selectRecordsFromPivotGrid(string headerName, int selectRecords = 1)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
             string colId = "";
             for (int i = 0; i < pivotFieldHeaders.Count; i++)
@@ -1346,7 +1346,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen unSelectRecordsFromPivotGrid(string headerName, int selectRecords = 1)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-pinned-left-header']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
             string colId = "";
             for (int i = 0; i < pivotFieldHeaders.Count; i++)
@@ -1407,7 +1407,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen selectRecordsFromPivotViewReportGrid(string headerName, int selectRecords = 1)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-header-container']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-header-container']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-header-container']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
             string colId = "";
             for (int i = 0; i < pivotFieldHeaders.Count; i++)
@@ -1446,7 +1446,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PivotReportScreen verifyColumnSelectedOrNotOnGrid(string headerName, bool columnSelected, int selectRecords = 1)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-header-container']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"), "Cell Headers not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-header-container']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]", 20), "Cell Headers not present.");
             IList<IWebElement> pivotFieldHeaders = driver.FindElements(By.XPath("//div[@ag-grid='pivotCtrl.gridOptions']//.//div[@class='ag-header-container']/div[@class='ag-header-row']/div[contains(@class,'ag-header-cell ag-header-cell-sortable')]"));
             string colId = "";
             for (int i = 0; i < pivotFieldHeaders.Count; i++)
@@ -1673,7 +1673,7 @@ namespace SMART_AUTO
             driver._clickByJavaScriptExecutor("//button[contains(text(),'" + buttonName + "')]");
             Results.WriteStatus(test, "Pass", "Clicked, '" + buttonName + "' Button from View.");
 
-            Assert.AreEqual(true, driver._waitForElement("xpath", "//div[@class='modal-content']"), "Product popup window not present.");
+            Assert.AreEqual(true, driver._waitForElement("xpath", "//div[@class='modal-content']", 20), "Product popup window not present.");
             driver._waitForElementToBeHidden("xpath", "//div[@class='loading-domainitem modal-tab-content']");
             IList<IWebElement> images = driver.FindElements(By.XPath("//div[@class='modal-content']//.//img"));
             for (int i = 0; i < images.Count; i++)

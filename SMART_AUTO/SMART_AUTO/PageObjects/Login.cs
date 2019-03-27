@@ -54,10 +54,10 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Login verifyLoginPageScreenInDetail()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//img[@class='CFT-login-logo']"), "Numerator Logo not found on Page.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//img[@class='CFT-login-logo']", 20), "Numerator Logo not found on Page.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//p[text() = 'Sign in to your Numerator account']"), "'Sign in to your Numerator account' Label not match.");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//input[@type='email' and @name = 'email']"), "Email input area not found on Page.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//input[@type='email' and @name = 'email']", 20), "Email input area not found on Page.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[@type='email' and @name = 'email' and @placeholder='Please enter your email address']"), "'Please enter your email address' Placeholder not found on match.");
 
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='CFT-auth-btn btn btn-primary btn-block']/span"), "Next Button not found on Page.");
@@ -142,7 +142,7 @@ namespace SMART_AUTO
 
             #endregion
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//p[contains(text(),'Enter the password for')]"), "'Enter the password for' Label not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//p[contains(text(),'Enter the password for')]", 20), "'Enter the password for' Label not present.");
             if (EmailId)
                 Assert.AreEqual(true, driver._isElementPresent("xpath", "//b[text() = '" + Email[0].ToString() + "']"), "Entered Email not match.");
 
@@ -585,8 +585,8 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Login verifyOutlookHomePage()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//span[@title='Inbox' and text() = 'Inbox']"), "Inbox Folder not Present.");
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@role='option' and @aria-haspopup='true']"), "Emails List not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//span[@title='Inbox' and text() = 'Inbox']", 20), "Inbox Folder not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@role='option' and @aria-haspopup='true']", 20), "Emails List not Present.");
             Results.WriteStatus(test, "Pass", "Verified, Outlook Home Page.");
             return new Login(driver, test);
         }
@@ -614,7 +614,7 @@ namespace SMART_AUTO
             Assert.AreEqual(true, avail, "'Your FeatureVision(R) Password Reset Request' Mail not Present.");
             Results.WriteStatus(test, "Pass", "Selected, Reset Password Email.");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@aria-label='Message Contents']"), "Message Content not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@aria-label='Message Contents']", 20), "Message Content not Present.");
             IWebElement body = driver._findElement("xpath", "//div[@aria-label='Message Contents']");
 
             if (mailContent)
@@ -646,7 +646,7 @@ namespace SMART_AUTO
         }
 
         #endregion
-        
+
         /// <summary>
         /// Select Second Reset password mail to open Reset link
         /// </summary>
@@ -680,7 +680,7 @@ namespace SMART_AUTO
             Assert.AreEqual(true, avail, "'Your FeatureVision(R) Password Reset Request' Mail not Present.");
             Results.WriteStatus(test, "Pass", "Selected, Reset Password Email.");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@aria-label='Message Contents']"), "Message Content not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@aria-label='Message Contents']", 20), "Message Content not Present.");
             IWebElement body = driver._findElement("xpath", "//div[@aria-label='Message Contents']");
 
             if (mailContent)

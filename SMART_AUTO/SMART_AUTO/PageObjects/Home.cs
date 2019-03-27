@@ -43,11 +43,11 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Home verifyHomePage()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//img[@alt='Product Logo']", 40), "Home Page Logo not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//img[@alt='Product Logo']", 20), "Home Page Logo not Present.");
             Thread.Sleep(5000);
             if (driver._isElementPresent("xpath", "//span[@class='lead' and contains(text(),'Almost there')]"))
                 driver._waitForElementToBeHidden("xpath", "//span[@class='lead' and contains(text(),'Almost there')]");
-            Assert.IsTrue(driver._waitForElement("xpath", "//*[@id='domain-carousel']/ol", 30), "Carousel not Present on Screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//*[@id='domain-carousel']/ol", 20), "Carousel not Present on Screen.");
             driver._waitForElementToBeHidden("xpath", "//p[@class='lead' and contains(text(),'Loading')]");
             int cnt = 0;
             IList<IWebElement> loadingCount = driver.FindElements(By.XPath("//p[@class='lead' and contains(text(),'Loading')]"));
@@ -84,7 +84,7 @@ namespace SMART_AUTO
             if (driver._isElementPresent("xpath", "//button[@id='baseexpand' and contains(@class,'active')]") == false)
             {
                 ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", driver._findElement("xpath", "//*[@id='baseexpand']"));
-                driver._waitForElement("xpath", "//button[@id='baseexpand' and contains(@class,'active')]");
+                driver._waitForElement("xpath", "//button[@id='baseexpand' and contains(@class,'active')]", 20);
                 Results.WriteStatus(test, "Pass", "Clicked, Navigation Menu Icon on Page.");
             }
 
@@ -180,7 +180,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Home verifyBottomPanelOfScreen()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ng-repeat='crumb in footerCtrl.data.breadcrumb']"), "'Screen Path' at Bottom not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@ng-repeat='crumb in footerCtrl.data.breadcrumb']", 20), "'Screen Path' at Bottom not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@ng-if='footerCtrl.data.contactUs.contactNumber']"), "Call for more info text not present.");
             Assert.AreEqual("Call 888-503-7533 for more info", driver._getText("xpath", "//div[@ng-if='footerCtrl.data.contactUs.contactNumber']"), "'Call 888-503-7533 for more info' text not match.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@ng-if='footerCtrl.data.company.isVisible']/a"), "'Numerator' Logo not present at bottom.");
@@ -214,7 +214,7 @@ namespace SMART_AUTO
             if (driver._isElementPresent("xpath", "//button[@id='baseexpand' and contains(@class,'active')]") == false)
             {
                 ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", driver._findElement("xpath", "//*[@id='baseexpand']"));
-                driver._waitForElement("xpath", "//button[@id='baseexpand' and contains(@class,'active')]");
+                driver._waitForElement("xpath", "//button[@id='baseexpand' and contains(@class,'active')]", 20);
                 Results.WriteStatus(test, "Pass", "Clicked, Navigation Menu Icon on Page.");
             }
 

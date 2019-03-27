@@ -296,7 +296,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public BrandDashboard verifyScheduleWindow(string searchName)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Window not Present on Screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Window not Present on Screen.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[@class='form-control' and @placeholder='" + searchName + "']"), "'" + searchName + "' Search Name Default not display.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//span[@class='fa fa-check text-success form-control-feedback']"), "'" + searchName + "' Search Name Feedback in Green Right color not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='btn btn-default dropdown-toggle']"), "Schedule Dropdown not Present.");

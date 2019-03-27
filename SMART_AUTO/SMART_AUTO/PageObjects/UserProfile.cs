@@ -44,7 +44,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public UserProfile clickUserIconverifyUserProfileSectionContent(bool editProfile)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[contains(@class,'btn-group ng-scope dropdown btn-group-info')]"), "User Menu not Present on screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[contains(@class,'btn-group ng-scope dropdown btn-group-info')]", 20), "User Menu not Present on screen.");
             Assert.AreEqual(true, driver._isElementPresent("id", "filter-menu"), "'Filter Bar' not Present on Screen.");
 
             if (driver._isElementPresent("xpath", "//div[@class='btn-group ng-scope dropdown btn-group-info open']") == false)
@@ -125,10 +125,10 @@ namespace SMART_AUTO
         {
             driver._selectFrameFromDefaultContent("xpath", "//div[contains(@class,'brand-item-container')]/iframe");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='CFT-auth-header']"), "Image Logo Header not present.");
-            Assert.AreEqual(true, driver._waitForElement("xpath", "//img[@class='CFT-login-logo']"), "Image Logo not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='CFT-auth-header']", 20), "Image Logo Header not present.");
+            Assert.AreEqual(true, driver._waitForElement("xpath", "//img[@class='CFT-login-logo']", 20), "Image Logo not present.");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//form[@class='edit-profile track-dirty-state']"), "Edit Profile Form not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//form[@class='edit-profile track-dirty-state']", 20), "Edit Profile Form not present.");
 
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//label[@for='firstName' and text()='First name']"), "'First Name' Label not present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[@name='firstName']"), "'First Name' Text area not present.");
@@ -294,7 +294,7 @@ namespace SMART_AUTO
             if (driver._isElementPresent("xpath", "//span[@role='combobox' and contains(@aria-labelledby,'" + fieldName.ToLower() + "-container') and @aria-expanded='true']") == false)
                 driver._click("xpath", "//span[@role='combobox' and contains(@aria-labelledby,'" + fieldName.ToLower() + "-container')]");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//ul[contains(@id,'" + fieldName.ToLower() + "-results')]/li"), "Options not present for Country Dropdown.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//ul[contains(@id,'" + fieldName.ToLower() + "-results')]/li", 20), "Options not present for Country Dropdown.");
             Results.WriteStatus(test, "Pass", "Verified, '" + fieldName + "' Field Option on form.");
 
             IList<IWebElement> ddlCollections = driver.FindElements(By.XPath("//ul[contains(@id,'" + fieldName.ToLower() + "-results')]/li"));
@@ -347,7 +347,7 @@ namespace SMART_AUTO
             if (driver._isElementPresent("xpath", "//span[@role='combobox' and contains(@aria-labelledby,'" + fieldName.ToLower() + "-container') and @aria-expanded='true']") == false)
                 driver._click("xpath", "//span[@role='combobox' and contains(@aria-labelledby,'" + fieldName.ToLower() + "-container')]");
 
-            Assert.IsTrue(driver._waitForElement("xpath", "//ul[contains(@id,'" + fieldName.ToLower() + "-results')]/li"), "Options not present for Country Dropdown.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//ul[contains(@id,'" + fieldName.ToLower() + "-results')]/li", 20), "Options not present for Country Dropdown.");
             Results.WriteStatus(test, "Pass", "Verified, '" + fieldName + "' Field Option on form.");
 
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[contains(@class,'search__field') and @type='search']"), "Search textarea not present for '" + fieldName + "' Field.");
@@ -471,14 +471,14 @@ namespace SMART_AUTO
 
             if (fieldName.Equals("First Name"))
             {
-                Assert.IsTrue(driver._waitForElement("xpath", "//input[@name='firstName']"), "'First Name' Text area not present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//input[@name='firstName']", 20), "'First Name' Text area not present.");
                 Assert.AreEqual(fieldValue, driver._getValue("xpath", "//input[@name='firstName']"), "'" + fieldValue + "' Value not match for First Name field.");
                 Results.WriteStatus(test, "Pass", "Verified, '" + fieldValue + "' Value for '" + fieldName + "' Field.");
             }
 
             if (fieldName.Equals("Last Name"))
             {
-                Assert.IsTrue(driver._waitForElement("xpath", "//input[@name='lastName']"), "'" + fieldValue + "' Text area not present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//input[@name='lastName']", 20), "'" + fieldValue + "' Text area not present.");
                 Assert.AreEqual(fieldValue, driver._getValue("xpath", "//input[@name='lastName']"), "'" + fieldValue + "' Value not match for First Name field.");
                 Results.WriteStatus(test, "Pass", "Verified, '" + fieldValue + "' Value for '" + fieldName + "' Field.");
             }

@@ -44,7 +44,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search verifyMySearchScreen(string accountName = "QA Testing - Brand")
         {
-            Assert.True(driver._waitForElement("xpath", "//ul[@class='nav nav-tabs modal-tabs']//.//a[contains(@ng-click,'my_search')]"), "'Edit Search' Button not Present.");
+            Assert.True(driver._waitForElement("xpath", "//ul[@class='nav nav-tabs modal-tabs']//.//a[contains(@ng-click,'my_search')]", 20), "'Edit Search' Button not Present.");
             Assert.IsTrue(driver._getText("xpath", "//ul[@class='nav nav-tabs modal-tabs']//.//a[contains(@ng-click,'my_search')]").Contains("Edit Search"), "'Edit Search' Button Label not match.");
 
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//ul[@class='nav nav-tabs modal-tabs']//.//a[contains(@ng-click,'saved_search')]"), "'Saved Searches' Button not Present.");
@@ -111,9 +111,15 @@ namespace SMART_AUTO
             if (dateRange.Equals("Random"))
             {
                 Random rand = new Random();
-                int x = rand.Next(3, dateRangeCollections.Count);
-                dateRange = dateRangeCollections[x].Text;
-                driver._clickByJavaScriptExecutor("//cft-field-editor-timeframe-calendar//.//div[@class='CFT-search-list-group-field CFT-search-list-group-field-child']/div/div/div[1]//.//ul/li[" + (x + 1) + "]/span");
+                for (int i = 0; i < 6; i++)
+                {
+                    int x = rand.Next(3, dateRangeCollections.Count);
+                    dateRange = dateRangeCollections[x].Text;
+                    driver._clickByJavaScriptExecutor("//cft-field-editor-timeframe-calendar//.//div[@class='CFT-search-list-group-field CFT-search-list-group-field-child']/div/div/div[1]//.//ul/li[" + (x + 1) + "]/span");
+                    Thread.Sleep(500);
+                    if (driver._getText("xpath", "//*[@id='CftSearchSummary']/div[1]").Contains("No Data Found") == false)
+                        break;
+                }
                 Results.WriteStatus(test, "Pass", "Selected, '" + dateRange + "' Date Range from Section.");
             }
             else
@@ -206,7 +212,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search verifySavedSearchesSectionOnScreen(bool searchCard = true)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='list-group-item cftSearchField']"), "'Saved Searched' Section not Present on screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='list-group-item cftSearchField']", 20), "'Saved Searched' Section not Present on screen.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@class='CFT-search-list-group-field']//.//input[contains(@placeholder,'Filter Saved Searches By Name')]"), "'Filter Saved Searches By Name' textarea not present.");
 
             IList<IWebElement> buttons = driver.FindElements(By.XPath("//div[@class='CFT-search-list-group-field']//.//button"));
@@ -331,7 +337,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search verifyScheduleWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Window not Present on Screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Window not Present on Screen.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[@class='form-control']"), "Search Name Default not display.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//span[@class='fa fa-check text-success form-control-feedback']"), "Search Name Feedback in Green Right color not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='btn btn-default dropdown-toggle']"), "Schedule Dropdown not Present.");
@@ -635,7 +641,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public String enterSearchValueOnSearchScreen()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']"), "'What would you like to call your search?' textarea not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", 20), "'What would you like to call your search?' textarea not Present.");
             driver._clickByJavaScriptExecutor("//input[contains(@placeholder,'What would you like to call your search') and @type='text']");
             string scheduleSearchName = "Test" + driver._randomString(4, true);
             driver._type("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", scheduleSearchName);
@@ -928,7 +934,7 @@ namespace SMART_AUTO
 
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//cft-field-editor-keyword-search-my-search//.//div[contains(@class,'CFT-search-list-group-field-child')]"), "Radio button section not present.");
             IList<IWebElement> radioCollections = driver.FindElements(By.XPath("//cft-field-editor-keyword-search-my-search//.//div[contains(@class,'CFT-search-list-group-field-child')]/div/div"));
-            string[] radioButtonTitles = { "All Fields", "Headline", "Lead Text", "Title", "Visual", "Description" };
+            string[] radioButtonTitles = { "All Fields", "Headline", "Lead Text", "Visual", "Description" };
             for (int i = 0; i < radioCollections.Count; i++)
                 Assert.AreEqual(true, radioCollections[i].Text.Contains(radioButtonTitles[i]), "'" + radioButtonTitles[i] + "' Radio Button not present.");
 
@@ -997,7 +1003,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search verifyResetChangesMessageOnScreen(bool resetChanges)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//label[@class='field-title']"), "Reset Message not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//label[@class='field-title']", 20), "Reset Message not present.");
             Results.WriteStatus(test, "Pass", "Verified, Reset Changes message on screen.");
 
             if (resetChanges)
@@ -1174,7 +1180,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search selectNoOfRecordsOnPageFromGrid(string pageNo)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='CFT-view-actions-wrapper']//.//div[@class='btn-group btn-grid-counts pull-right']/button"), "'Records per Page' list not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='CFT-view-actions-wrapper']//.//div[@class='btn-group btn-grid-counts pull-right']/button", 20), "'Records per Page' list not present.");
             driver.MouseHoverUsingElement("xpath", "//div[@class='CFT-view-actions-wrapper']//.//div[@class='btn-group btn-grid-counts pull-right']/button");
             IList<IWebElement> noOfPages = driver.FindElements(By.XPath("//div[@class='CFT-view-actions-wrapper']//.//div[@class='btn-group btn-grid-counts pull-right']/button"));
             for (int i = 0; i < noOfPages.Count; i++)
@@ -1495,7 +1501,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search verifySaveAsSectionAfterClickingOnSaveAsButton()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']"), "'What would you like to call your search?' textarea not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", 20), "'What would you like to call your search?' textarea not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//label[@class='field-checkbox']/span[@class='text-muted' and contains(text(),'Make Default')]"), "'Make Default' Checkbox Label not present.");
             Assert.AreEqual("rgba(119, 119, 119, 1)", driver.FindElement(By.XPath("//label[@class='field-checkbox']/span[@class='text-muted' and contains(text(),'Make Default')]")).GetCssValue("color"), "'Make Default' Button is not UnChecked.");
 
@@ -1607,7 +1613,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public Search verifyOverwriteSectionWithMessageOnScreen(bool overWrite)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//label[@class='field-title']"), "Reset Message not present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//label[@class='field-title']", 20), "Reset Message not present.");
             Assert.AreEqual("Great we see that you are trying to overwrite the current applied search. Are you sure you want to overwrite?", driver._getText("xpath", "//label[@class='field-title']"), "Overwrite Message not match.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='btn btn-default' and contains(text(),'Cancel')]"), "'Cancel' Button not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='btn btn-default' and contains(text(),'Overwrite')]"), "'Overwrite' Button not Present.");
@@ -1761,7 +1767,7 @@ namespace SMART_AUTO
                 verifyFieldMenuAndClickOnItOnSearchScreen("Media").selectMediaCheckboxOptionForAnnualSummary();
                 clickButtonOnSearchScreen("Save As");
 
-                Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']"), "'What would you like to call your search?' textarea not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", 20), "'What would you like to call your search?' textarea not Present.");
                 driver._clickByJavaScriptExecutor("//input[contains(@placeholder,'What would you like to call your search') and @type='text']");
                 scheduleSearchName = "Test" + driver._randomString(4, true);
                 driver._type("xpath", "//input[contains(@placeholder,'What would you like to call your search') and @type='text']", scheduleSearchName);

@@ -374,7 +374,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public BrandMonthlyReport verifyScheduleWindow(string searchName)
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Window not Present on Screen.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Window not Present on Screen.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//input[@class='form-control' and @placeholder='" + searchName + "']"), "'" + searchName + "' Search Name Default not display.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//span[@class='fa fa-check text-success form-control-feedback']"), "'" + searchName + "' Search Name Feedback in Green Right color not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//button[@class='btn btn-default dropdown-toggle']"), "Schedule Dropdown not Present.");
@@ -546,7 +546,7 @@ namespace SMART_AUTO
             if (enable)
             {
                 driver._waitForElementToBeHidden("xpath", "//i[@class='fa fa-fw fa-spinner fa-spin']");
-                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='modal-content']"), "Product Details Popup Window not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='modal-content']", 20), "Product Details Popup Window not Present.");
                 Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@class='panel-heading modal-header-inner']/span"), "Header not prensent for popup window.");
 
                 IList<IWebElement> tabCollections = driver.FindElements(By.XPath("//div[@class='panel-heading modal-header-inner']/ul/li"));
@@ -589,7 +589,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public BrandMonthlyReport verifyViewAdScreenOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='row aditem-image-row']"), "Pages of Ad block not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='row aditem-image-row']", 20), "Pages of Ad block not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='creative-thumbnail-container']/div/div/div"), "List of Ad Block Pages not found.");
             Assert.IsTrue(driver._isElementPresent("xpath", "//*[@id='creative-thumbnail-container']/div/div/div//.//div[contains(@class,'active')]"), "Current Selected Page not Display on Screen.");
 
@@ -661,7 +661,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public BrandMonthlyReport verifyMarketsTabOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='modal-content']//.//div[@id='borderLayout_eRootPanel']//.//div[@class='ag-body-container']/div"), "Grid Proper not Loading.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='modal-content']//.//div[@id='borderLayout_eRootPanel']//.//div[@class='ag-body-container']/div", 20), "Grid Proper not Loading.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@class='modal-content']//.//div[@id='borderLayout_eRootPanel']//.//div[@class='ag-header-container']"), "Grid Header not present on window.");
 
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@class='btn-group']//.//i[@class='fa fa-cloud-download']"), "'Download Grid' Button not Present on Window.");
@@ -698,7 +698,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public BrandMonthlyReport verifyMoreDetailsScreenOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']"), "Image Section not Present on Details Section.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']", 20), "Image Section not Present on Details Section.");
             IWebElement image = driver._findElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']//.//img");
             bool loaded = Convert.ToBoolean(((IJavaScriptExecutor)driver).ExecuteScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", image));
             Assert.AreEqual(true, loaded, "'(" + image.GetAttribute("src") + ")' Image Not Load on Details Section.");
@@ -1282,7 +1282,7 @@ namespace SMART_AUTO
                                     driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]");
                                     Thread.Sleep(10000);
                                     driver._waitForElementToBeHidden("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'spinner')]");
-                                    Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]"), "Download icon not display after click download button.");
+                                    Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]", 20), "Download icon not display after click download button.");
                                     Thread.Sleep(10000);
                                     //Assert.AreEqual(true, driver.FindElement(By.XPath("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]")).Displayed, "Download icon not display after click download button.");
                                     Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
@@ -1301,7 +1301,7 @@ namespace SMART_AUTO
                             driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]");
                             Thread.Sleep(10000);
                             driver._waitForElementToBeHidden("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'spinner')]");
-                            Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]"), "Download icon not display after click download button.");
+                            Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]", 20), "Download icon not display after click download button.");
                             Thread.Sleep(10000);
                             //Assert.AreEqual(true, driver.FindElement(By.XPath("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]")).Displayed, "Download icon not display after click download button.");
                             Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
@@ -1323,7 +1323,7 @@ namespace SMART_AUTO
 
                                         driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/cft-scheduled-export-popover//.//button");
                                         Thread.Sleep(500);
-                                        Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Popup Window not display after clicked on Schedule button.");
+                                        Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Popup Window not display after clicked on Schedule button.");
                                         Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
                                         break;
                                     }
@@ -1338,7 +1338,7 @@ namespace SMART_AUTO
 
                                 driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/cft-scheduled-export-popover//.//button");
                                 Thread.Sleep(500);
-                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Popup Window not display after clicked on Schedule button.");
+                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Popup Window not display after clicked on Schedule button.");
                                 Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
                                 break;
                             }

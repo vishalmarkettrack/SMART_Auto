@@ -100,7 +100,7 @@ namespace SMART_AUTO
         {
             Assert.AreEqual(true, driver._isElementPresent("id", "filter-menu"), "'Filter Bar' not Present on Screen.");
 
-            //Assert.IsTrue(driver._waitForElement("xpath", "//li[@id='side-menu-button' and @class='filter-menu-prev-button disabled']"), "'Previous' Arrow Default not Disable.");
+            //Assert.IsTrue(driver._waitForElement("xpath", "//li[@id='side-menu-button' and @class='filter-menu-prev-button disabled']", 20), "'Previous' Arrow Default not Disable.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//nav[@class='navbar' and @role='navigation']/ul/li"), "Filter Fields not Present.");
 
             IList<IWebElement> fieldsCollection = driver.FindElements(By.XPath("//nav[@class='navbar' and @role='navigation']/ul/li"));
@@ -685,7 +685,7 @@ namespace SMART_AUTO
                 if (thumbnail)
                     for (int i = 0; i < productCounts.Count; i++)
                     {
-                        Assert.AreEqual(true, driver._waitForElement("xpath", "//*[@id='domain-carousel']/div/div[contains(@class,'active')]/div[" + (i + 1) + "]//.//img"), "image not load properly.");
+                        Assert.AreEqual(true, driver._waitForElement("xpath", "//*[@id='domain-carousel']/div/div[contains(@class,'active')]/div[" + (i + 1) + "]//.//img", 20), "image not load properly.");
                         IWebElement image = driver._findElement("xpath", "//*[@id='domain-carousel']/div/div[contains(@class,'active')]/div[" + (i + 1) + "]//.//img");
                         bool loaded = Convert.ToBoolean(((IJavaScriptExecutor)driver).ExecuteScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", image));
                         Assert.AreEqual(true, loaded, "'(" + image.GetAttribute("src") + ")' Image Not Load on Carousel Section.");
@@ -787,7 +787,7 @@ namespace SMART_AUTO
             if (enable)
             {
                 driver._waitForElementToBeHidden("xpath", "//i[@class='fa fa-fw fa-spinner fa-spin']");
-                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='modal-content']"), "Product Details Popup Window not Present.");
+                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='modal-content']", 20), "Product Details Popup Window not Present.");
                 Assert.AreEqual(true, driver._isElementPresent("xpath", "//div[@class='panel-heading modal-header-inner']/span"), "Product Label not found on popup window.");
 
                 IList<IWebElement> tabCollections = driver.FindElements(By.XPath("//div[@class='panel-heading modal-header-inner']/ul/li"));
@@ -830,7 +830,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PromoDashboard verifyViewAdScreenOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='row aditem-image-row']"), "Pages of Ad block not Present.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='row aditem-image-row']", 20), "Pages of Ad block not Present.");
             Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='creative-thumbnail-container']/div/div/div"), "List of Ad Block Pages not found.");
             Assert.IsTrue(driver._isElementPresent("xpath", "//*[@id='creative-thumbnail-container']/div/div/div//.//div[contains(@class,'active')]"), "Current Selected Page not Display on Screen.");
 
@@ -858,7 +858,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PromoDashboard verifyStoresScreenOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//*[@ref='center']//.//div[contains(@class,'ag-body')]/div[@class='ag-body-viewport-wrapper']/div/div/div[1]"), "Grid Proper not Loading.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//*[@ref='center']//.//div[contains(@class,'ag-body')]/div[@class='ag-body-viewport-wrapper']/div/div/div[1]", 20), "Grid Proper not Loading.");
 
             IList<IWebElement> gridLists = driver.FindElements(By.XPath("//*[@ref='center']//.//div[contains(@class,'ag-header')]/div[@class='ag-header-viewport']//.//div[@class='ag-header-row']/div"));
             string[] headers = { "Store Number", "Retailer", "City", "State", "Zip Code" };
@@ -878,7 +878,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PromoDashboard verifyMoreDetailsScreenOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']"), "Image Section not Present on Details Section.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']", 20), "Image Section not Present on Details Section.");
             IWebElement image = driver._findElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']//.//img");
             bool loaded = Convert.ToBoolean(((IJavaScriptExecutor)driver).ExecuteScript("return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", image));
             Assert.AreEqual(true, loaded, "'(" + image.GetAttribute("src") + ")' Image Not Load on Details Section.");
@@ -898,7 +898,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PromoDashboard verifyMapScreenOnPopupWindow()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']"), "Image Section not Present on Details Section.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='aditem aditem-thumbnail-view aditem-modal']", 20), "Image Section not Present on Details Section.");
 
             Results.WriteStatus(test, "Pass", "Verified, Map Screen on popup window.");
             return new PromoDashboard(driver, test);
@@ -1579,7 +1579,7 @@ namespace SMART_AUTO
                 //Assert.AreEqual(actionCollection[i].GetAttribute("disabled"), buttonVisiblity[i], "'" + buttonNames[i] + "' Button not " + buttonVisiblity[i] + " Present.");
             }
 
-            Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='affixViewActions']//.//button/i[@class='fa fa-list-alt']"), "'Details View' Button not Present on Section.");
+            Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='affixViewActions']//.//button/i[contains(@ng-class,'viewIcon')]"), "'Details View' Button not Present on Section.");
             Results.WriteStatus(test, "Pass", "Verified, Action Button on View Section.");
             return new PromoDashboard(driver, test);
         }
@@ -1741,7 +1741,7 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PromoDashboard selectRecordFromGridAndVerifyThumbnailRecord()
         {
-            Assert.IsTrue(driver._waitForElement("xpath", "//*[@ref='center']//.//div[contains(@class,'ag-body')]/div[@class='ag-body-viewport-wrapper']/div/div/div"), "Grid Proper not Loading.");
+            Assert.IsTrue(driver._waitForElement("xpath", "//*[@ref='center']//.//div[contains(@class,'ag-body')]/div[@class='ag-body-viewport-wrapper']/div/div/div", 20), "Grid Proper not Loading.");
             IList<IWebElement> gridRecords = driver.FindElements(By.XPath("//*[@ref='center']//.//div[contains(@class,'ag-body')]/div[@class='ag-body-viewport-wrapper']/div/div/div"));
             Random rand = new Random();
             int x = rand.Next(0, gridRecords.Count);
@@ -1929,11 +1929,11 @@ namespace SMART_AUTO
                 driver._clickByJavaScriptExecutor("//*[@id='cft-detail-view-2']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-detail-view']//.//div[@class='row checkbox checkbox-header']/label");
             }
             else
-                if (driver._isElementPresent("xpath", "//*[@id='center']//.//div[@class='ag-header-container']/div[@class='ag-header-row']") == true)
+                if (driver._isElementPresent("xpath", "//*[@id='borderLayout_eGridPanel']//.//div[@class='ag-header-container']/div[@class='ag-header-row']") == true)
                 {
-                    Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='center']//.//div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']"), "Checkbox not Present on Grid for First Record number.");
-                    driver._scrollintoViewElement("xpath", "//*[@id='center']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']");
-                    driver._clickByJavaScriptExecutor("//*[@id='center']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']/i[contains(@class,'fa-square')]");
+                    Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='borderLayout_eGridPanel']//.//div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']"), "Checkbox not Present on Grid for First Record number.");
+                    driver._scrollintoViewElement("xpath", "//*[@id='borderLayout_eGridPanel']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']");
+                    driver._clickByJavaScriptExecutor("//*[@id='borderLayout_eGridPanel']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']/i[contains(@class,'fa-square')]");
                 }
                 else
                     if (driver._isElementPresent("xpath", "//*[@id='cft-detail-view-4']//.//div[contains(@ng-repeat,'item')]/div[@class='aditem aditem-thumbnail-view']") == true)
@@ -2421,7 +2421,7 @@ namespace SMART_AUTO
                                     driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]");
                                     Thread.Sleep(10000);
                                     driver._waitForElementToBeHidden("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'spinner')]");
-                                    Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]"), "Download icon not display after click download button.");
+                                    Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]", 20), "Download icon not display after click download button.");
                                     Thread.Sleep(10000);
                                     //Assert.AreEqual(true, driver.FindElement(By.XPath("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/div/button/i[contains(@class,'download')]")).Displayed, "Download icon not display after click download button.");
                                     Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
@@ -2440,7 +2440,7 @@ namespace SMART_AUTO
                             driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]");
                             Thread.Sleep(10000);
                             driver._waitForElementToBeHidden("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'spinner')]");
-                            Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]"), "Download icon not display after click download button.");
+                            Assert.IsTrue(driver._waitForElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]", 20), "Download icon not display after click download button.");
                             Thread.Sleep(10000);
                             //Assert.AreEqual(true, driver.FindElement(By.XPath("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]")).Displayed, "Download icon not display after click download button.");
                             Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
@@ -2462,7 +2462,7 @@ namespace SMART_AUTO
 
                                         driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (j + 1) + "]/div[2]/cft-scheduled-export-popover//.//button");
                                         Thread.Sleep(500);
-                                        Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Popup Window not display after clicked on Schedule button.");
+                                        Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Popup Window not display after clicked on Schedule button.");
                                         Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
                                         break;
                                     }
@@ -2477,7 +2477,7 @@ namespace SMART_AUTO
 
                                 driver._clickByJavaScriptExecutor("//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/cft-scheduled-export-popover//.//button");
                                 Thread.Sleep(500);
-                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']"), "Schedule Popup Window not display after clicked on Schedule button.");
+                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='popover-content popover-body']", 20), "Schedule Popup Window not display after clicked on Schedule button.");
                                 Results.WriteStatus(test, "Pass", "Clicked, '" + clickingButtonName + "' Button for '" + reportName + "' Report for '" + sectionName + "' Section.");
                                 break;
                             }
@@ -2579,7 +2579,7 @@ namespace SMART_AUTO
                         if (content.Equals(""))
                             content = "Download";
                         driver.MouseHoverUsingElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'download')]");
-                        Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']"), "'" + content + "' tooltip not present.");
+                        Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']", 20), "'" + content + "' tooltip not present.");
                         Assert.AreEqual(true, driver._getText("xpath", "//div[@class='tooltip-inner']").Contains(content), "Tooltip not Present with '" + content + "' Label.");
                         Results.WriteStatus(test, "Pass", "Verified, '" + option + "' Tooltip for '" + reportName + "' Report for '" + reportSection + "' Section.");
                         break;
@@ -2596,7 +2596,7 @@ namespace SMART_AUTO
                             if (content.Equals(""))
                                 content = "Email";
                             driver.MouseHoverUsingElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'envelope')]");
-                            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']"), "'" + content + "' tooltip not present.");
+                            Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']", 20), "'" + content + "' tooltip not present.");
                             Assert.AreEqual(true, driver._getText("xpath", "//div[@class='tooltip-inner']").Contains(content), "Tooltip not Present with '" + content + "' Label.");
                             Results.WriteStatus(test, "Pass", "Verified, '" + option + "' Tooltip for '" + reportName + "' Report for '" + reportSection + "' Section.");
                             break;
@@ -2613,7 +2613,7 @@ namespace SMART_AUTO
                                 if (content.Equals(""))
                                     content = "Ban";
                                 driver.MouseHoverUsingElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/div/button/i[contains(@class,'ban')]");
-                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']"), "'" + content + "' tooltip not present.");
+                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']", 20), "'" + content + "' tooltip not present.");
                                 Assert.AreEqual(true, driver._getText("xpath", "//div[@class='tooltip-inner']").Contains(content), "Tooltip not Present with '" + content + "' Label.");
                                 Results.WriteStatus(test, "Pass", "Verified, '" + option + "' Tooltip for '" + reportName + "' Report for '" + reportSection + "' Section.");
                                 break;
@@ -2629,7 +2629,7 @@ namespace SMART_AUTO
                                 if (content.Equals(""))
                                     content = "Schedule";
                                 driver.MouseHoverUsingElement("xpath", "//cft-domain-item-export-customizer//.//div[@class='CFT-view-customizer']/div/div[" + (i + 1) + "]//.//div[@class='list-group list-group-flex list-group-export']/div[" + (x + 1) + "]/div[2]/cft-scheduled-export-popover");
-                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']"), "'" + content + "' tooltip not present.");
+                                Assert.IsTrue(driver._waitForElement("xpath", "//div[@class='tooltip-inner']", 20), "'" + content + "' tooltip not present.");
                                 Assert.AreEqual(true, driver._getText("xpath", "//div[@class='tooltip-inner']").Contains(content), "Tooltip not Present with '" + content + "' Label.");
                                 Results.WriteStatus(test, "Pass", "Verified, '" + option + "' Tooltip for '" + reportName + "' Report for '" + reportSection + "' Section.");
                                 break;
