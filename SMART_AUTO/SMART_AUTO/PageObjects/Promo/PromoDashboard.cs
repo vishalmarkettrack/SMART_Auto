@@ -1922,18 +1922,23 @@ namespace SMART_AUTO
         /// <returns></returns>
         public PromoDashboard selectRecordFromViewSection()
         {
+            bool selected = false;
             if (driver._isElementPresent("xpath", "//*[@id='cft-detail-view-2']//.//div[contains(@ng-repeat,'item')]/div[@class='aditem aditem-detail-view']") == true)
             {
                 Assert.IsTrue(driver._isElementPresent("xpath", "//*[@id='cft-detail-view-2']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-detail-view']//.//div[@class='row checkbox checkbox-header']/label"), "Header not Present for First Ad Block.");
                 driver._scrollintoViewElement("xpath", "//*[@id='cft-detail-view-2']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-detail-view']//.//div[@class='row checkbox checkbox-header']/label");
                 driver._clickByJavaScriptExecutor("//*[@id='cft-detail-view-2']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-detail-view']//.//div[@class='row checkbox checkbox-header']/label");
+                selected = true;
             }
             else
-                if (driver._isElementPresent("xpath", "//*[@id='borderLayout_eGridPanel']//.//div[@class='ag-header-container']/div[@class='ag-header-row']") == true)
+                //if (driver._isElementPresent("xpath", "//*[@id='borderLayout_eGridPanel']//.//div[@class='ag-header-container']/div[@class='ag-header-row']") == true)
+                if (driver._isElementPresent("xpath", "//div[@class='table-viewer']//.//*[@id='borderLayout_eGridPanel']//.//div[@class='ag-header-container']/div[@class='ag-header-row']"))
                 {
                     Assert.AreEqual(true, driver._isElementPresent("xpath", "//*[@id='borderLayout_eGridPanel']//.//div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']"), "Checkbox not Present on Grid for First Record number.");
                     driver._scrollintoViewElement("xpath", "//*[@id='borderLayout_eGridPanel']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']");
-                    driver._clickByJavaScriptExecutor("//*[@id='borderLayout_eGridPanel']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']/i[contains(@class,'fa-square')]");
+                    Thread.Sleep(500);
+                    driver._clickByJavaScriptExecutor("//*[@id='borderLayout_eGridPanel']//./div[@class='ag-pinned-left-cols-container']/div[1]//.//span[@class='ag-selection-checkbox']/span[contains(@class,'fa-square')]");
+                    selected = true;
                 }
                 else
                     if (driver._isElementPresent("xpath", "//*[@id='cft-detail-view-4']//.//div[contains(@ng-repeat,'item')]/div[@class='aditem aditem-thumbnail-view']") == true)
@@ -1941,8 +1946,10 @@ namespace SMART_AUTO
                         Assert.IsTrue(driver._isElementPresent("xpath", "//*[@id='cft-detail-view-4']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-thumbnail-view']//.//div[@class='row checkbox checkbox-header']"), "Header not Present for First Record on Ad Block.");
                         driver._scrollintoViewElement("xpath", "//*[@id='cft-detail-view-4']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-thumbnail-view']//.//div[@class='row checkbox checkbox-header']");
                         driver._clickByJavaScriptExecutor("//*[@id='cft-detail-view-4']//.//div[contains(@ng-repeat,'item')][1]/div[@class='aditem aditem-thumbnail-view']//.//div[@class='row checkbox checkbox-header']");
+                        selected = true;
                     }
 
+            Assert.AreEqual(true, selected, "Record not selected from View section.");
             Thread.Sleep(1000);
             Results.WriteStatus(test, "Pass", "Selected Record from View Section");
             return new PromoDashboard(driver, test);

@@ -1084,6 +1084,284 @@ namespace SMART_AUTO.SMART_AUTO
             driver.Quit();
         }
 
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC036_Verify_ResetSelected_ButtonWhenRecordsAreSelected(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC036-Verify 'Reset Selected' button when records are selected.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.selectRecordFromViewSection();
+                promoDashboard.verifyButtonDisableOrNotOnScreen("Reset Selected", false);
+                promoDashboard.clickButtonOnViewActionSection("Reset Selected");
+                promoDashboard.verifyViewSelectedButtonCheckedOrNotOnScreen(false);
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC036");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC037_Verify_ResetSelected_ButtonWhenRecordsAreNotSelected(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC037-Verify 'Reset Selected' button when records are not selected.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.verifyButtonDisableOrNotOnScreen("Reset Selected", true);
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC037");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        // Want to Update Testcase
+        //[Test]
+        //[TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC038_VerifyThatLabelShouldChangeTo_ViewAll_AfterClickingOnViewSelectedButton(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC038-Verify that label should change to 'View all' after clicking on View Selected button.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC038");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC039_VerifyExportSelectedFunctionality(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC039-Verify 'Export Selected' Functionality.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.selectRecordFromViewSection().verifyButtonDisableOrNotOnScreen("Export Selected", false);
+                promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports", "Download");
+                promoDashboard.verifyFileDownloadedOrNotOnScreen("qatest-db", "*.xlsx");
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC039");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC040_VerifyExportSelectedFunctionalityForDataReportsSection(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC040-Verify 'Export Selected' Functionality for Data Reports Section.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.selectRecordFromViewSection().verifyButtonDisableOrNotOnScreen("Export Selected", false);
+                promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports", "Download");
+                promoDashboard.verifyFileDownloadedOrNotOnScreen("qatest-db", "*.xlsx");
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC040");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC041_VerifyExportSelectedFunctionalityForPowerPointReports(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC041-Verify 'Export Selected' Functionality For Power Point Reports.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.selectRecordFromViewSection().verifyButtonDisableOrNotOnScreen("Export Selected", false);
+                promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports", "Download");
+                promoDashboard.verifyFileDownloadedOrNotOnScreen("qatest-db", "*.pptx");
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC041");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC042_VerifyExportSelectedFunctionalityForAssetReports(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC042-Verify 'Export Selected' Functionality For Asset Reports.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.selectRecordFromViewSection().verifyButtonDisableOrNotOnScreen("Export Selected", false);
+                promoDashboard.clickButtonOnViewActionSection("Export Selected").verifyExportAllSectionOnDashboardScreen();
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Asset Downloads");
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Asset Downloads", "Download");
+                promoDashboard.verifyFileDownloadedOrNotOnScreen("qatest-db", "*.zip");
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC042");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC043_VerifyDataReportsWhenTotalRecordsAreMoreThan5000(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC043-Verify Data Reports when total records are more than 5000.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();                
+                promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
+
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Data Reports");
+                promoDashboard.verifyTiooltipFunctionalityForReportsSection("Data Reports", "Email", "Send results via email");
+                
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC043");
+                throw;
+            }
+            driver.Quit();
+        }
+
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC044_VerifyPowerPointReportsWhenTotalRecordsAreMoreThan1000(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC044-Verify Power Point Reports when total records are more than 1000.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
+
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Power Point Reports");
+                promoDashboard.verifyTiooltipFunctionalityForReportsSection("Power Point Reports", "Email", "Send results via email");
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC044");
+                throw;
+            }
+            driver.Quit();
+        }
+        
+        [Test]
+        [TestCaseSource(typeof(Base), "BrowserToRun")]
+        public void TC045_VerifyAssetDownloadsWhenTotalRecordsAreMoreThan250(String Bname)
+        {
+            TestFixtureSetUp(Bname, "TC045-Verify  Asset Downloads when total records are more than 250.");
+            try
+            {
+                loginPage.navigateToLoginPage().verifyLoginPageScreenInDetail();
+                loginPage.loginUsingValidEmailIdAndPassword();
+
+                homePage.verifyHomePage().clickUserMenuAndSelectAccountFromList("QA Testing - Brand");
+                homePage.clickSiteNavigationMenuIconAndSelectOptionFromListOnPage("Dashboard");
+
+                brandDashboard.verifyBrandDashboardScreen();
+                promoDashboard.clickButtonOnViewActionSection("Export All").verifyExportAllSectionOnDashboardScreen();
+
+                promoDashboard.verifyOrClickExportAllSectionInDetailOnScreen("Asset Downloads");
+                promoDashboard.verifyTiooltipFunctionalityForReportsSection("Asset Downloads", "Email", "Send results via email");
+
+            }
+            catch (Exception e)
+            {
+                Logging.LogStop(this.driver, test, e, MethodBase.GetCurrentMethod(), Bname + "_TestSuite013_BrandDashboardReport_TC045");
+                throw;
+            }
+            driver.Quit();
+        }
+
         #endregion
     }
 }
